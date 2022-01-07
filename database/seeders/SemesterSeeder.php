@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Semester;
 use Illuminate\Database\Seeder;
 
 class SemesterSeeder extends Seeder
@@ -13,6 +14,11 @@ class SemesterSeeder extends Seeder
      */
     public function run()
     {
-        // $semesters = 
+        $semesters = ['1st Semester', '2nd Semester'];
+        foreach ($semesters as $semester){
+            Semester::updateOrCreate([
+                'name' => $semester
+            ]);
+        }
     }
 }
