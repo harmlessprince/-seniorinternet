@@ -9,4 +9,17 @@ class Course extends Model
 {
     use HasFactory;
     protected $fillable=['code', 'description', 'semester_id'];
+
+    public function students(){
+        return $this->belongsToMany(Student::class)->withTimestamps();
+    }
+
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
+    }
+    public function lecturer()
+    {
+        return $this->belongsTo(Lecturer::class);
+    }
 }
