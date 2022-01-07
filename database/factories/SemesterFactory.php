@@ -14,7 +14,7 @@ class SemesterFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
         ];
     }
 }

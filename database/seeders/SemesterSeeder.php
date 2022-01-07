@@ -13,6 +13,6 @@ class SemesterSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // $semesters = 
     }
 }
