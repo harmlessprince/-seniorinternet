@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LecturerFactory extends Factory
@@ -13,10 +14,13 @@ class LecturerFactory extends Factory
      */
     public function definition()
     {
+        $first_name = $this->faker->firstName;
+        $last_name = $this->faker->lastName;
         return [
-            'first_name' => $this->faker->firstName,
-            'last_name' => $this->faker->lastName,
-            'email' => $this->faker->safeEmail
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $this->faker->safeEmail,
+            'slug' => Str::slug($first_name, '-')
         ];
     }
 }

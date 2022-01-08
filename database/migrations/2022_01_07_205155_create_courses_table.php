@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->text('description');
             $table->foreignId('semester_id')->constrained();
             $table->foreignId('lecturer_id')->constrained();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

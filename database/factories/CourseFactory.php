@@ -26,7 +26,8 @@ class CourseFactory extends Factory
            'code' => $code,
            'description' => $this->faker->text,
            'semester_id' => $semesterId,
-           'lecturer_id' => $lecturerId
+           'lecturer_id' => $lecturerId,
+           'slug' => Str::slug($code),
         ];
     }
 }
