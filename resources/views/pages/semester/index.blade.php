@@ -18,6 +18,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Name</th>
                             <th>No Of Courses</th>
                             <th>
@@ -28,10 +29,11 @@
                     <tbody>
                         @foreach ($semesters as $semester)
                         <tr>
+                            <td>{{++$loop->index}}</td>
                             <td>{{$semester->name}}</td>
                             <td>{{$semester->courses_count}}</td>
                             <td>
-                                <a href="{{route('semesters.show', $semester)}}" class="btn btn-sm btn-primary"> View</a>
+                                <a href="{{route('semesters.show', $semester)}}" class="btn btn-sm btn-primary"> View {{$semester->name}}</a>
                             </td>
                         </tr>
                         @endforeach

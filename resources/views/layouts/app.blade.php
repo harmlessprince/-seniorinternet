@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Spring </title>
+    <title>SpringField College </title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -30,9 +30,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-school"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">SP College</div>
             </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -53,51 +53,23 @@
                     <i class="fas fa-calendar"></i>
                     <span>Semester</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#course" aria-expanded="true"
-                    aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Courses</span>
-                </a>
-                <div id="course" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
-                    style="">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Courses:</h6>
-                        <a class="collapse-item" href="{{ route('courses.index') }}">All Courses</a>
-                        {{-- <a class="collapse-item" href="cards.html">Sho</a> --}}
-                    </div>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('courses.index') }}">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Courses</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#student" aria-expanded="true"
-                    aria-controls="student">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Students</span>
-                </a>
-                <div id="student" class="collapse" aria-labelledby="student" data-parent="#accordionSidebar"
-                    style="">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Students:</h6>
-                        <a class="collapse-item" href="{{ route('students.index') }}">All Students</a>
-                        {{-- <a class="collapse-item" href="cards.html">Cards</a> --}}
-                    </div>
-                </div>
+            
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('students.index') }}">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#lecturer" aria-expanded="true"
-                    aria-controls="lecturer">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Lecturers</span>
-                </a>
-                <div id="lecturer" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
-                    style="">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Lecturers:</h6>
-                        <a class="collapse-item" href="{{ route('lecturers.index') }}">All Lecturers</a>
-                        {{-- <a class="collapse-item" href="cards.html">Cards</a> --}}
-                    </div>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('lecturers.index') }}">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Lecturers</span></a>
             </li>
+        
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -137,7 +109,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2019</span>
+                        <span>Copyright &copy; Springfield College {{date("Y")}}</span>
                     </div>
                 </div>
             </footer>

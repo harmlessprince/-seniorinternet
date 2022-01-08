@@ -18,6 +18,7 @@ Courses
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Course Code</th>
                             <th>Lecturer</th>
                             <th>No Of Students</th>
@@ -30,6 +31,7 @@ Courses
                     <tbody>
                         @foreach ($courses as $course)
                         <tr>
+                            <td>{{++$loop->index}}</td>
                             <td>{{$course->code}}</td>
                             <td>{{$course->lecturer->full_name}}</td>
                             <td>{{$course->students->count()}}</td>
