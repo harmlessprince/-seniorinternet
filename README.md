@@ -1,66 +1,231 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Spring College Course Management System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Step 1: Cloning the repository
 
-## About Laravel
+It is either you download the repo or clone it using your terminal. To clone the repo,
+Navigate to the folder were you will be lunching your project, then run the command below 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```
+git clone https://github.com/harmlessprince/-seniorinternet.git
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+After cloning successfully, you should see the file downloaded successfully downloaded to the directory you specified. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Step 2: Editing your enviroment variables
+Laravel comes with a file called **.env.example**, with all typical configuration values.
 
-## Learning Laravel
+```
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=springcollege
+DB_USERNAME=root
+DB_PASSWORD=
 
-## Laravel Sponsors
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+MEMCACHED_HOST=127.0.0.1
 
-### Premium Partners
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
 
-## Contributing
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
 
-## Code of Conduct
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+But for you to able to run project on you local machine. We need to do three things
 
-## Security Vulnerabilities
+ 1.  Create a file .env in the root of your project.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ 2. Copy that example file contents into the created .env file with this command on linux or just use your normal copying of content technique suitable for your opersting system.
+ ```
+ cp .env.example .env
+ ```
+3. Edit the new .env file, in your text editor. You can change a lot of variables  but the main ones you need to change or add to your .env file are these.
 
-## License
+```
+APP_NAME="Spring College"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=false
+APP_URL=http://127.0.0.1:8000
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=yourdatabasename
+DB_USERNAME=databaseusername
+DB_PASSWORD=databasepassword
+```
+
+## Step 3: Running composer install
+Let run this "magic" command 
+```
+composer install
+```
+On this step, you may accounter some errors if some pacjages are not compatible wth you php version or extensions. So check or any messages and fix before proceding to the next step.
+
+Incase of success, it looks like something like this
+
+```
+Installing dependencies from lock file (including require-dev)
+Verifying lock file contents can be installed on current platform.
+Nothing to install, update or remove
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: facade/ignition
+Discovered Package: fideloper/proxy
+Discovered Package: fruitcake/laravel-cors
+Discovered Package: laravel/passport
+Discovered Package: laravel/sail
+Discovered Package: laravel/tinker
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+79 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+```
+
+## Step 4: Generate application key.
+We need to run this command: 
+```
+php artisan key:generate
+```
+It generates a random key which is automatically added to .env file **APP_KEY** variable.
+
+## Step 5: Migrating DB Schema.
+In order to migrate we need to lunch this
+
+```
+php artisan migrate
+```
+You should have a similar or the same output as this.
+
+```
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (39.01ms)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (32.73ms)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (41.65ms)
+Migrating: 2019_12_14_000001_create_personal_access_tokens_table
+Migrated:  2019_12_14_000001_create_personal_access_tokens_table (56.37ms)
+Migrating: 2022_01_07_205112_create_semesters_table
+Migrated:  2022_01_07_205112_create_semesters_table (17.59ms)
+Migrating: 2022_01_07_205113_create_lecturers_table
+Migrated:  2022_01_07_205113_create_lecturers_table (44.72ms)
+Migrating: 2022_01_07_205155_create_courses_table
+Migrated:  2022_01_07_205155_create_courses_table (157.00ms)
+Migrating: 2022_01_07_205524_create_students_table
+Migrated:  2022_01_07_205524_create_students_table (44.65ms)
+Migrating: 2022_01_07_215400_create_course_student_table
+Migrated:  2022_01_07_215400_create_course_student_table (151.53ms)
+
+```
+
+then let seed the database.
+```
+php artisan db:seed
+```
+Your output should be something like this.
+```
+Seeding: Database\Seeders\SemesterSeeder
+Seeded:  Database\Seeders\SemesterSeeder (20.51ms)
+Seeding: Database\Seeders\StudentSeeder
+Seeded:  Database\Seeders\StudentSeeder (453.92ms)
+Seeding: Database\Seeders\LecturerSeeder
+Seeded:  Database\Seeders\LecturerSeeder (51.90ms)
+Seeding: Database\Seeders\CourseSeeder
+Seeded:  Database\Seeders\CourseSeeder (474.32ms)
+Seeding: Database\Seeders\StudentCourseSeeder
+Seeded:  Database\Seeders\StudentCourseSeeder (7,300.73ms)
+Database seeding completed successfully.
+
+```
+To speed up the process, you may run two commands above as one
+
+```
+php artisan migrate --seed
+```
+There are about 15 test cases.  You can run test by running the command below.
+
+```
+php artisan test
+```
+If your installation and migration goes well, you should see the following ouptut.
+
+```
+   PASS  Tests\Unit\CourseControllerTest
+  ✓ index route can be reached
+  ✓ show route can be reached
+
+   PASS  Tests\Unit\CourseTest
+  ✓ a course belongs to a semester
+  ✓ a course belongs to a lecturer
+  ✓ a course belongs to one or more students
+
+   PASS  Tests\Unit\LecturerControllerTest
+  ✓ index route can be reached
+  ✓ show route can be reached
+
+   PASS  Tests\Unit\LecturerTest
+  ✓ lecturers table has expected columns
+  ✓ a lecturer has many courses
+
+   PASS  Tests\Unit\SemesterTest
+  ✓ semesters table has expected columns
+  ✓ a semester has many courses
+
+   PASS  Tests\Unit\StudentControllerTest
+  ✓ index route can be reached
+  ✓ show route can be reached
+
+   PASS  Tests\Unit\StudentTest
+  ✓ students table has expected columns
+  ✓ students registered for one or more courses
+
+  Tests:  15 passed
+  Time:   0.56s
+
+```
+
+## Vistit App Demo at:
+
+[Spring College Domo](https://seniorspringcollege.herokuapp.com/ "Spring College Domo")
+
