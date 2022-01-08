@@ -5,21 +5,23 @@
 @endpush
 
 @section('p_heading')
-    Semester
+Courses
 @endsection
 @section('content')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">All Semesters</h6>
+            <h6 class="m-0 font-weight-bold text-primary">All Courses</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>No Of Courses</th>
+                            <th>Course Code</th>
+                            <th>Lecturer</th>
+                            <th>No Of Students</th>
+                            <td>Semester</td>
                             <th>
                                 Action
                             </th>
@@ -28,10 +30,12 @@
                     <tbody>
                         @foreach ($courses as $course)
                         <tr>
-                            <td>{{$semester->name}}</td>
-                            <td>{{$semester->courses_count}}</td>
+                            <td>{{$course->code}}</td>
+                            <td>{{$course->lecturer->full_name}}</td>
+                            <td>{{$course->students->count()}}</td>
+                            <td>{{$course->semester->name}}</td>
                             <td>
-                                <a href="{{route('semesters.show', $semester)}}" class="btn btn-sm btn-primary"> View</a>
+                                <a href="{{route('courses.show', $course)}}" class="btn btn-sm btn-primary"> View</a>
                             </td>
                         </tr>
                         @endforeach

@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
-    protected $fillable=['code', 'description', 'semester_id'];
+    protected $fillable = ['code', 'description', 'semester_id'];
 
-    public function students(){
+    public function students()
+    {
         return $this->belongsToMany(Student::class)->withTimestamps();
     }
 
@@ -22,4 +23,17 @@ class Course extends Model
     {
         return $this->belongsTo(Lecturer::class);
     }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'code';
+    }
+
+
+    
 }
