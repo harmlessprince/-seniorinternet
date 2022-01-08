@@ -19,15 +19,6 @@ class CourseTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
-    {
-        $this->assertTrue(true);
-    }
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
     public function test_a_course_belongs_to_a_semester()
     {
         $semester = Semester::factory()->create();
