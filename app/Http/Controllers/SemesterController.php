@@ -15,8 +15,8 @@ class SemesterController extends Controller
      */
     public function index()
     {
-       $semesters = Semester::withCount('courses')->get();
-       return $semesters;
+        $semesters = Semester::withCount('courses')->get();
+        return view('pages.semester.index', compact('semesters'));
     }
 
     /**
@@ -48,8 +48,8 @@ class SemesterController extends Controller
      */
     public function show(Semester $semester)
     {
-       $semester  = $semester->load('courses');
-       return $semester;
+        $semester  = $semester->load(['courses', 'courses.students', 'courses.lecturer']);
+        return view('pages.semester.show', compact('semester'));
     }
 
     /**

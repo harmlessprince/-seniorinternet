@@ -14,4 +14,14 @@ class Lecturer extends Model
     {
         return $this->hasMany(Course::class);
     }
+
+    /**
+     * Get the lecturers's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
 }

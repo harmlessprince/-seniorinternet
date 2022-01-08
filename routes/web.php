@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -17,11 +18,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('dashboard');
+Route::prefix('semesters')->name('semesters.')->group(function () {
+    Route::get('/', [SemesterController::class, 'index'])->name('index');
+    Route::get('/{semester}', [SemesterController::class, 'show'])->name('show');
+});
+Route::prefix('courses')->name('courses.')->group(function () {
+    Route::get('/', [CourseController::class, 'index'])->name('index');
+    Route::get('/{course}', [CourseController::class, 'show'])->name('show');
+});
 
-Route::get('semesters', [SemesterController::class, 'index']);
-Route::get('semesters/{semester}', [SemesterController::class, 'show']);
+Route::prefix('students')->name('students.')->group(function () {
+    Route::get('/', [StudentController::class, 'index'])->name('index');
+    Route::get('/{student}', [StudentController::class, 'show'])->name('show');
+});
 
-// Route::get('semesters', [SemesterController::class, 'index']);
-Route::get('courses/{course}', [CourseController::class, 'show']);
-Route::get('students/{student}', [StudentController::class, 'show']);
+Route::prefix('lecturers')->name('lecturers.')->group(function () {
+    Route::get('/', [LecturerController::class, 'index'])->name('index');
+    Route::get('/{lecturer}', [LecturerController::class, 'show'])->name('show');
+});
+
+
+
