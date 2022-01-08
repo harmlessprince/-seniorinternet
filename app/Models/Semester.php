@@ -19,4 +19,13 @@ class Semester extends Model
     {
         return $this->hasMany(Lecturer::class);
     }
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
