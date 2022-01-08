@@ -100,4 +100,9 @@ class BaseRepository implements \App\Repositories\Eloquent\Contracts\EloquentRep
     {
         return $this->findTrashedById($modelId)->forceDelete();
     }
+
+    public function count()
+    {
+        return $this->model->count();
+    }
 }
