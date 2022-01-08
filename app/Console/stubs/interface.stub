@@ -1,0 +1,9 @@
+<?php
+
+namespace {{ namespace }};
+
+interface {{ class }} extends EloquentRepositoryInterface
+{
+
+}
+}
