@@ -13,8 +13,10 @@ class SemesterFactory extends Factory
      */
     public function definition()
     {
+
         return [
-            
+            'name' => $this->faker->firstName,
+            'slug' => '1st-semester',
         ];
     }
 }

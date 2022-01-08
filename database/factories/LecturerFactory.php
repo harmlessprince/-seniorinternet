@@ -14,13 +14,13 @@ class LecturerFactory extends Factory
      */
     public function definition()
     {
-        $first_name = $this->faker->firstName;
-        $last_name = $this->faker->lastName;
+         $first_name = $this->faker->firstName();
+         $last_name = $this->faker->lastName();
         return [
             'first_name' => $first_name,
             'last_name' => $last_name,
             'email' => $this->faker->safeEmail,
-            'slug' => Str::slug($first_name, '-')
+            'slug' => $first_name,
         ];
     }
 }
