@@ -13,6 +13,20 @@ class Student extends Model
     {
         return $this->belongsToMany(Course::class)->withTimestamps();
     }
+    public function firstSemesterCourses()
+    {
+        return $this->belongsToMany(Course::class)->whereHas('semester', function ($query)
+        {
+            $query->where('slug', Semester::FIRST_SEMESTER);
+        });
+    }
+    public function secondSemesterCourses()
+    {
+        return $this->belongsToMany(Course::class)->whereHas('semester', function ($query)
+        {
+            $query->where('slug', Semester::SECOND_SEMESTER);
+        });
+    }
     /**
      * Get the students's full name.
      *

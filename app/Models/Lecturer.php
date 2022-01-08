@@ -33,4 +33,18 @@ class Lecturer extends Model
     {
         return 'slug';
     }
+    public function firstSemesterCourses()
+    {
+        return $this->hasMany(Course::class)->whereHas('semester', function ($query)
+        {
+            $query->where('slug', Semester::FIRST_SEMESTER);
+        });
+    }
+    public function secondSemesterCourses()
+    {
+        return $this->hasMany(Course::class)->whereHas('semester', function ($query)
+        {
+            $query->where('slug', Semester::SECOND_SEMESTER);
+        });
+    }
 }

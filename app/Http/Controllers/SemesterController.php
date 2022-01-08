@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Semester;
 use App\Http\Requests\StoreSemesterRequest;
 use App\Http\Requests\UpdateSemesterRequest;
+use App\Repositories\Eloquent\Repository\SemesterRepository;
 
 class SemesterController extends Controller
 {
+
+    private $semesterRepository;
+    public function __construct(SemesterRepository $semesterRepository)
+    {
+        $this->semesterRepository = $semesterRepository;
+    }
     /**
      * Display a listing of the resource.
      *

@@ -35,7 +35,7 @@ Courses
                             <td>{{$course->students->count()}}</td>
                             <td>{{$course->semester->name}}</td>
                             <td>
-                                <a href="{{route('courses.show', $course)}}" class="btn btn-sm btn-primary"> View</a>
+                                <a href="{{route('courses.show', $course)}}" class="btn btn-sm btn-primary">View Course</a>
                             </td>
                         </tr>
                         @endforeach

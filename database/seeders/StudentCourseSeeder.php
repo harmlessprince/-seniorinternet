@@ -19,7 +19,7 @@ class StudentCourseSeeder extends Seeder
         // Populate the pivot table
         Student::all()->each(function ($student) use ($courses) {
             $student->courses()->sync(
-                $courses->random(15)->pluck('id')->toArray()
+                $courses->random(rand(15, 20))->pluck('id')->toArray()
             );
         });
     }

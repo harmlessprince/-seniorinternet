@@ -9,6 +9,9 @@ class Semester extends Model
 {
     use HasFactory;
     protected $fillable=['name'];
+
+    const FIRST_SEMESTER = '1st-semester';
+    const SECOND_SEMESTER = '2nd-semester';
     
     public function courses()
     {

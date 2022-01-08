@@ -35,7 +35,7 @@
                             <td>{{$student->full_name}}</td>
                             <td>{{$student->email}}</td>
                             <td>
-                                <a href="{{route('courses.show', $course)}}" class="btn btn-sm btn-primary"> View</a>
+                                <a href="{{route('students.show', $student)}}" class="btn btn-sm btn-primary"> View Student</a>
                             </td>
                         </tr>
                         @endforeach
