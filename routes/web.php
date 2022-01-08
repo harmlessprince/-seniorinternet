@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\SemesterController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('semesters', [SemesterController::class, 'index']);
+Route::get('semesters/{semester}', [SemesterController::class, 'show']);
+
+// Route::get('semesters', [SemesterController::class, 'index']);
+Route::get('courses/{course}', [CourseController::class, 'show']);
+Route::get('students/{student}', [StudentController::class, 'show']);

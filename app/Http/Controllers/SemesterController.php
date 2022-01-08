@@ -15,7 +15,8 @@ class SemesterController extends Controller
      */
     public function index()
     {
-        //
+       $semesters = Semester::withCount('courses')->get();
+       return $semesters;
     }
 
     /**
@@ -47,7 +48,8 @@ class SemesterController extends Controller
      */
     public function show(Semester $semester)
     {
-        //
+       $semester  = $semester->load('courses');
+       return $semester;
     }
 
     /**

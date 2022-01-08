@@ -47,7 +47,8 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        $course = $course->load('semester', 'lecturer', 'students');
+        return $course;     
     }
 
     /**
